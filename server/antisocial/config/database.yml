@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: antisocial_development
+  host: localhost
+  username: web
+  port: 5432
+  password: password
+
+test:
+  <<: *default
+  database: antisocial_test
+
+production:
+  <<: *default
+  database: antisocial_production
+  username: antisocial
+  password: <%= ENV['ANTISOCIAL_DATABASE_PASSWORD'] %>
