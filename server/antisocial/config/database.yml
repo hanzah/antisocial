@@ -7,9 +7,9 @@ development:
   <<: *default
   database: antisocial_development
   host: localhost
-  username: web
+  username: XXX
   port: 5432
-  password: password
+  password: XXX
 
 test:
   <<: *default
